@@ -16,8 +16,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: apt upgdate
-      run: sudo apt-get update
     - name: Install libasound2-dev
       run: apt-get install libasound2-dev
     - name: Build
