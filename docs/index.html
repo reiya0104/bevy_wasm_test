@@ -21,13 +21,13 @@
                     <div class="bevy-instance__progress-bar" data-progress-bar></div>
                 </div>
             </div>
-            <canvas class="bevy-instance__canvas" id="bevy" width="1280" height="720"></canvas>
+            <!-- <canvas class="bevy-instance__canvas" id="bevy" width="1280" height="720"></canvas> -->
         </div>
         <script type="module">
             import { progressiveFetch } from './tools.js';
             import init from './bevy_wasm_test.js';
 
-            const canvasEl = document.getElementById('bevy');
+            // const canvasEl = document.getElementById('bevy');
             const progressStatusEl = document.querySelector('[data-progress-status]');
             const progressFileEl = document.querySelector('[data-progress-file]');
             const progressBarEl = document.querySelector('[data-progress-bar]');
