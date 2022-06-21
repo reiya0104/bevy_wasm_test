@@ -14,16 +14,6 @@
         <title>Bevy - rect</title>
     </head>
     <body>
-        <div class="example__canvas bevy-instance">
-            <div class="bevy-instance__progress-status" data-progress-status>
-                <div class="bevy-instance__progress-file" data-progress-file></div>
-                <div class="bevy-instance__progress-track">
-                    <div class="bevy-instance__progress-bar" data-progress-bar></div>
-                </div>
-            </div>
-            <canvas class="bevy-instance__canvas" id="bevy" width="1280" height="720"></canvas>
-        </div>
-
         <script type="module">
             import { progressiveFetch } from './tools.js';
             import init from './bevy_wasm_test.js';
@@ -59,5 +49,14 @@
 
             init(loadingBarFetch);
         </script>
+        <div class="example__canvas bevy-instance">
+            <canvas class="bevy-instance__canvas" id="bevy" width="1280" height="720"></canvas>
+            <div class="bevy-instance__progress-status" data-progress-status>
+                <div class="bevy-instance__progress-file" data-progress-file></div>
+                <div class="bevy-instance__progress-track">
+                    <div class="bevy-instance__progress-bar" data-progress-bar></div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
