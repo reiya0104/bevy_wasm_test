@@ -298,7 +298,7 @@ async function load(module, imports) {
     }
 }
 
-function getImports() {
+function getImports(customFetch) {
     const imports = {};
     imports.wbg = {};
     imports.wbg.__wbindgen_object_clone_ref = function(arg0) {
@@ -855,7 +855,7 @@ function getImports() {
         getObject(arg0).clearTimeout(arg1);
     };
     imports.wbg.__wbg_fetch_8df5fcf7dd9fd853 = function(arg0, arg1, arg2) {
-        const ret = getObject(arg0).fetch(getStringFromWasm0(arg1, arg2));
+        const ret = customFetch(getStringFromWasm0(arg1, arg2));
         return addHeapObject(ret);
     };
     imports.wbg.__wbg_setTimeout_a100c5fd6f7b2032 = function() { return handleError(function (arg0, arg1, arg2) {
@@ -1645,7 +1645,7 @@ function finalizeInit(instance, module) {
 }
 
 function initSync(bytes) {
-    const imports = getImports();
+    const imports = getImports(customFetch);
 
     initMemory(imports);
 
@@ -1655,14 +1655,14 @@ function initSync(bytes) {
     return finalizeInit(instance, module);
 }
 
-async function init(input) {
+async function init(customFetch, input) { customFetch = customFetch || fetch;
     if (typeof input === 'undefined') {
         input = new URL('bevy_wasm_test_bg.wasm', import.meta.url);
     }
-    const imports = getImports();
+    const imports = getImports(customFetch);
 
     if (typeof input === 'string' || (typeof Request === 'function' && input instanceof Request) || (typeof URL === 'function' && input instanceof URL)) {
-        input = fetch(input);
+        input = customFetch(input);
     }
 
     initMemory(imports);
