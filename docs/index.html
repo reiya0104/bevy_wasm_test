@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name='viewport' content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Bevy - rect" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://reiya0104.com/bevy_wasm_test" />
+        <!-- <meta property="og:image" content="" /> -->
+        <meta property="og:description" content="reiya0104 Bevy wasm test page" />
+        <!-- <link rel="shortcut icon" type="image/png" href="/assets/favicon.png"> -->
+        <!-- <link rel="stylesheet" href="/site.css" /> -->
+        <!-- <link href="/atom.xml" rel="alternate" type="application/atom+xml" /> -->
+        <title>Bevy - rect</title>
+    </head>
+    <body>
+        <canvas id="bevy" width="1280" height="720"></canvas>
+        <script type="module">
+            import init from './bevy_wasm_test.js';
+
+            const canvasEl = document.getElementById('bevy');
+        </script>
+    </body>
+</html>
